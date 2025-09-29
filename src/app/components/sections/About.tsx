@@ -12,13 +12,9 @@ const InfoCard: React.FC<InfoCardProps> = ({ icon, text }) => (
     <span className="flex-grow text-center text-sm font-medium font-poppins px-10">{text} </span>
   </div>
 );
-const AboutSection = () => {
-  const backgroundImageUrl = "/wall.jpg";
 
   return (
-    <div className="min-h-screen w-full bg-cover bg-center bg-no-repeat p-4 sm:p-8 flex flex-col items-center justify-center font-sans"
-    style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
-
+    <div className="min-h-screen w-full bg-[url('/wall.jpg')] bg-cover bg-center bg-no-repeat p-4 sm:p-8 flex flex-col items-center justify-center font-sans">
       <header className="w-full max-w-5xl mb-12">
         <div className="w-full flex flex-col sm:flex-row items-center justify-between sm:justify-center gap-4">
           <InfoCard
@@ -110,3 +106,4 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
