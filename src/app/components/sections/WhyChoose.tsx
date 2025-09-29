@@ -36,7 +36,13 @@ const cardData = [
   },
 ];
 
-const NavButton = ({ text, isActive, onClick }) => (
+type NavButton = {
+  text: string;
+  isActive: boolean;
+  onClick: (value: string) => void;
+};
+
+const NavButton: React.FC<NavButton> = ({ text, isActive, onClick }) => (
   <button
     onClick={() => onClick(text)}
     className={`bg-white text-blue-700 font-medium py-3 px-8 rounded-md shadow-sm border border-gray-200 transition-all duration-300 ${
@@ -47,7 +53,16 @@ const NavButton = ({ text, isActive, onClick }) => (
   </button>
 );
 
-const FeatureCard = ({ image, title, description, className }) => (
+type FeatureCardProps = {
+  image: string;
+  title: string;
+  description: string;
+  className?: string;
+  isActive?: boolean;
+  onClick?: (value: string) => void;
+};
+
+const FeatureCard: React.FC<FeatureCardProps>= ({ image, title, description, className }) => (
   <div
     className={`bg-white rounded-xl shadow-lg overflow-hidden text-left transform hover:-translate-y-2 transition-transform duration-300 ${className}`}
   >
